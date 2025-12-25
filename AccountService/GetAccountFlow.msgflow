@@ -6,14 +6,14 @@
     <colorGraphic16 xmi:type="utility:GIFFileGraphic" resourceName="platform:/plugin/AccountService/icons/full/obj16/GetAccountFlow.gif"/>
     <colorGraphic32 xmi:type="utility:GIFFileGraphic" resourceName="platform:/plugin/AccountService/icons/full/obj30/GetAccountFlow.gif"/>
     <composition>
-      <nodes xmi:type="ComIbmWSInput.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_1" location="206,279" URLSpecifier="/getAccount">
-        <translation xmi:type="utility:ConstantString" string="ClientRequestRest"/>
+      <nodes xmi:type="ComIbmWSInput.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_1" location="206,279" URLSpecifier="/broker/service" faultFormat="JSON">
+        <translation xmi:type="utility:ConstantString" string="ClientRequestBroker_in"/>
       </nodes>
       <nodes xmi:type="ComIbmWSRequest.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_2" location="560,281" URLSpecifier="http://localhost:8080/api/account" httpMethod="GET" httpVersion="1.1" protocol="TLS">
         <translation xmi:type="utility:ConstantString" string="ApiRequest"/>
       </nodes>
       <nodes xmi:type="ComIbmWSReply.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_3" location="928,289">
-        <translation xmi:type="utility:ConstantString" string="ApiResponseRest"/>
+        <translation xmi:type="utility:ConstantString" string="ApiResponse_out"/>
       </nodes>
       <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_1" targetNode="FCMComposite_1_2" sourceNode="FCMComposite_1_1" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
       <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_2" targetNode="FCMComposite_1_3" sourceNode="FCMComposite_1_2" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
